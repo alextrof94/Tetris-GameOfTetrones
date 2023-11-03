@@ -203,10 +203,24 @@ namespace GameOfTethrones
                 }
 
             // draw figures score
-            foreach (Block b in figuresScore[0].blocks)
-                g.DrawImage(b.img,
-                        b.posX * blockSize + pbFigure1.Location.X,
-                        b.posY * blockSize + pbFigure1.Location.Y);
+            for (int i = 0; i < 3; i++)
+            {
+                if (i < 2)
+                {
+                    Block b = figuresScore[0].blocks[i];
+                    g.DrawImage(b.img,
+                            b.posX * blockSize + pbFigure1.Location.X,
+                            b.posY * blockSize + pbFigure1.Location.Y);
+                }
+                else
+                {
+                    Block b = figuresScore[0].blocks[3];
+                    Block bpos = figuresScore[0].blocks[2];
+                    g.DrawImage(b.img,
+                            bpos.posX * blockSize + pbFigure1.Location.X,
+                            bpos.posY * blockSize + pbFigure1.Location.Y);
+                }
+            }
             foreach (Block b in figuresScore[1].blocks)
                 g.DrawImage(b.img,
                         b.posX * blockSize + pbFigure2.Location.X,
@@ -430,7 +444,11 @@ namespace GameOfTethrones
             else
                 escReaded = false;
         }
-        
+
+        private void TiUnsetButtons_Tick(object sender, EventArgs e)
+        {
+            downReaded = false;
+        }
     }
 
     class Figure
@@ -495,9 +513,10 @@ namespace GameOfTethrones
             switch (type)
             {
                 case 1:
-                    blocks.Add(new Block(0, 0, Properties.Resources.I1));
-                    blocks.Add(new Block(0, 1, Properties.Resources.I2));
-                    blocks.Add(new Block(0, 2, Properties.Resources.I3));
+                    blocks.Add(new Block(0, 0, Properties.Resources.I2_1));
+                    blocks.Add(new Block(0, 1, Properties.Resources.I2_2));
+                    blocks.Add(new Block(0, 2, Properties.Resources.I2_3));
+                    blocks.Add(new Block(0, 3, Properties.Resources.I2_4));
                     break;
                 case 2:
                     blocks.Add(new Block(2, 0, Properties.Resources.L1));

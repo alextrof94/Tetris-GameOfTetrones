@@ -55,6 +55,7 @@
             this.pbFigureScore6 = new System.Windows.Forms.PictureBox();
             this.pbFigureScore7 = new System.Windows.Forms.PictureBox();
             this.pbAnimateTo = new System.Windows.Forms.PictureBox();
+            this.TiUnsetButtons = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbHeSawUs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMan)).BeginInit();
@@ -366,6 +367,11 @@
             this.pbAnimateTo.TabStop = false;
             this.pbAnimateTo.Visible = false;
             // 
+            // TiUnsetButtons
+            // 
+            this.TiUnsetButtons.Enabled = true;
+            this.TiUnsetButtons.Tick += new System.EventHandler(this.TiUnsetButtons_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,7 +404,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "GameOfTethrones";
             ((System.ComponentModel.ISupportInitialize)(this.pbHeSawUs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGirl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMan)).EndInit();
@@ -454,6 +460,7 @@
         private System.Windows.Forms.PictureBox pbFigureScore6;
         private System.Windows.Forms.PictureBox pbFigureScore7;
         private System.Windows.Forms.PictureBox pbAnimateTo;
+        private System.Windows.Forms.Timer TiUnsetButtons;
     }
 }
 
